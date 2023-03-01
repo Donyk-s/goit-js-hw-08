@@ -20,19 +20,28 @@ function onEmailInput(event) {
 }
 
 function onFormSubmit(event) {
-  event.preventDefault();
-  const {
-    elements: { email, message },
-  } = event.currentTarget;
-  if (email.value.trim() === '' || message.value.trim() === '') {
-    return alert('Please fill in all the fields! M.Jackson');
-  } else {
-    console.log({ email: email.value, message: message.value });
-
-    localStorage.removeItem(STORAGE_KEY);
-    event.currentTarget.reset();
-  }
+  let data = localStorage.getItem(LOCAL_KEY);
+  data = data ? JSON.parse(data) : {};
+  let { email, message } = form.elements;
+  data = {
+    email: email.value.trim(),
+    message: message.value.trim(),
+  };
 }
+// function onFormSubmit(event) {
+//   event.preventDefault();
+//   const {
+//     elements: { email, message },
+//   } = event.currentTarget;
+//   if (email.value.trim() === '' || message.value.trim() === '') {
+//     return alert('Please fill in all the fields! M.Jackson');
+//   } else {
+//     console.log({ email: email.value, message: message.value });
+
+//     localStorage.removeItem(STORAGE_KEY);
+//     event.currentTarget.reset();
+//   }
+// }
 
 function populateTextarea() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
