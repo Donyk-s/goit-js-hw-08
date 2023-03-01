@@ -27,6 +27,7 @@ function onFormSubmit(event) {
     email: email.value.trim(),
     message: message.value.trim(),
   };
+  localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
 }
 // function onFormSubmit(event) {
 //   event.preventDefault();
