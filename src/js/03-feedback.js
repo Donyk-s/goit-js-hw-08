@@ -11,7 +11,7 @@ refs.form.addEventListener('submit', onFormSubmit);
 refs.form.addEventListener('input', throttle(onEmailInput, 500));
 
 function onEmailInput(event) {
-  data = {
+  const data = {
     email: refs.inputEmail.value.trim(),
     message: refs.textareaMessage.value.trim(),
   };
