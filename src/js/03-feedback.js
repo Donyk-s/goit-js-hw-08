@@ -37,10 +37,9 @@ function onFormSubmit(event) {
 function populateTextarea() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (savedMessage === null) {
-    console.log(savedMessage);
+    // console.log(savedMessage);
     return;
   }
   refs.inputEmail.value = savedMessage['message'] || '';
   refs.textareaMessage.value = savedMessage['email'] || '';
 }
-// https://github.com/goitacademy/parcel-project-template.git
