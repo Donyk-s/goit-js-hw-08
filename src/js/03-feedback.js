@@ -15,7 +15,7 @@ function onEmailInput(event) {
     email: refs.inputEmail.value.trim(),
     message: refs.textareaMessage.value.trim(),
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(dataInput));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   console.log(data);
 }
 
